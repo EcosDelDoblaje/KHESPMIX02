@@ -50,6 +50,9 @@ Para más información sobre el proyecto o el equipo de Ecos del Doblaje, visita
 
 ⭐ Si este proyecto te ha sido útil, ¡no olvides darle una estrella!
 
+---
+
+
 ### ©️ Copyright
 
 No tenemos ninguna afiliación con la marca Kingdom Hearts. Todos los derechos reservados a Disney y Square Enix.

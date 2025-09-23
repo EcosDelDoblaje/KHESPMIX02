@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecos del Doblaje - Kingdom Hearts 0.2</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Title Bar -->
+    <div class="title-bar">
+        <div class="title-bar-text">Ecos del Doblaje - Kingdom Hearts 0.2</div>
+        <div class="title-bar-controls">
+            <button class="title-bar-button" id="minimize-btn">−</button>
+            <button class="title-bar-button close" id="close-btn">×</button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div class="screen active" id="welcome-screen">
+            <div class="background-overlay"></div>
+            <div class="content">
+                <div class="logo-section">
+                    <h1 class="main-title">ECOS DEL<br>DOBLAJE</h1>
+                    <p class="subtitle">INSTALADOR DEL<br>DOBLAJE AL CASTELLANO</p>
+                </div>
+                <div class="description" id="welcome-description">
+                    <p>Este programa instalará el doblaje al castellano<br>para "Kingdom Hearts 0.2"</p>
+                </div>
+                <div class="welcome-actions" id="welcome-actions">
+                    <!-- Default new installation button -->
+                    <button class="primary-button" id="next-btn">
+                        <span>Siguiente</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Mod already installed actions -->
+                <div class="mod-installed-actions" id="mod-installed-actions" style="display: none;">
+                    <button class="primary-button" id="welcome-uninstall-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 6H5H21M8 6V4C8 3.44772 8.44772 3 9 3H15C15.5523 3 16 3.44772 16 4V6M19 6V20C19 20.5523 18.4477 21 18 21H6C5.44772 21 5 20.5523 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Desinstalar</span>
+                    </button>
+                    <button class="secondary-button" id="welcome-reinstall-btn">
+                        <span>Reinstalar</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M1 4V10H7M23 20V14H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10M3.51 15A9 9 0 0 0 18.36 18.36L23 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reinstall Options Screen -->
+        <div class="screen" id="reinstall-screen">
+            <div class="background-overlay"></div>
+            <div class="content">
+                <h2 class="screen-title">Opciones de Reinstalación</h2>
+                <div class="reinstall-info">
+                    <p>Se detectó una instalación previa del doblaje al castellano.</p>
+                    <div class="current-status" id="current-status">
+                        <!-- Dynamic content will be inserted here -->
+                    </div>
+                </div>
+                
+                <div class="reinstall-actions">
+                    <button class="primary-button" id="confirm-reinstall-btn">
+                        <span>Reinstalar</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M1 4V10H7M23 20V14H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10M3.51 15A9 9 0 0 0 18.36 18.36L23 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="secondary-button" id="uninstall-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 6H5H21M8 6V4C8 3.44772 8.44772 3 9 3H15C15.5523 3 16 3.44772 16 4V6M19 6V20C19 20.5523 18.4477 21 18 21H6C5.44772 21 5 20.5523 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Desinstalar</span>
+                    </button>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button class="secondary-button" id="reinstall-back-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Volver</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms and Conditions Screen -->
+        <div class="screen" id="terms-screen">
+            <div class="background-overlay"></div>
+            <div class="content">
+                <h2 class="screen-title">Términos y Condiciones</h2>
+                <div class="terms-content">
+                    <div class="terms-scroll">
+                        <h3>Acuerdo de Licencia de Usuario Final (EULA)</h3>
+                        <h4>Ecos del Doblaje - Mod de Doblaje al Castellano para Kingdom Hearts 0.2</h4>
+                        
+                        <p><strong>IMPORTANTE:</strong> Lea cuidadosamente este acuerdo antes de instalar y usar este software.</p>
+                        
+                        <h4>1. DERECHOS DE AUTOR Y PROPIEDAD INTELECTUAL</h4>
+                        <p>Este mod de doblaje al castellano es propiedad intelectual del equipo "Ecos del Doblaje". Todos los derechos están reservados. El trabajo de doblaje, traducción, edición y producción contenido en este mod está protegido por las leyes de derechos de autor.</p>
+                        
+                        <h4>2. LICENCIA DE USO</h4>
+                        <p>Se le otorga una licencia limitada, no exclusiva e intransferible para usar este mod únicamente para uso personal y no comercial. Esta licencia no le otorga derechos de propiedad sobre el software.</p>
+                        
+                        <h4>3. RESTRICCIONES</h4>
+                        <p>Usted NO puede:</p>
+                        <ul>
+                            <li>Redistribuir, vender o comercializar este mod</li>
+                            <li>Modificar, descompilar o realizar ingeniería inversa</li>
+                            <li>Extraer o usar por separado los archivos de audio</li>
+                            <li>Reclamar autoría del trabajo de doblaje</li>
+                            <li>Usar este mod para fines comerciales</li>
+                        </ul>
+                        
+                        <h4>4. EXENCIÓN DE RESPONSABILIDAD</h4>
+                        <p>Este mod se proporciona "tal como está" sin garantías de ningún tipo. El equipo Ecos del Doblaje no se hace responsable de daños a su sistema, pérdida de datos o cualquier otro problema derivado del uso de este software.</p>
+                        
+                        <h4>5. JUEGO ORIGINAL</h4>
+                        <p>Este mod requiere una copia legal de "KINGDOM HEARTS HD 2.8 Final Chapter Prologue". No estamos afiliados con SquareEnix o Disney. Kingdom hearts es marca registrada de sus respectivos propietarios.</p>
+                        
+                        <h4>6. CONTACTO</h4>
+                        <p>Para consultas sobre este acuerdo: www.ecosdeldoblaje.es</p>
+                        
+                        <p><strong>Al hacer clic en "Acepto", usted acepta estar sujeto a los términos de este acuerdo.</strong></p>
+                    </div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button class="secondary-button" id="terms-back-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Atrás
+                    </button>
+                    <button class="primary-button disabled" id="accept-terms-btn" disabled>
+                        <span>Acepto</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Path Selection Screen -->
+        <div class="screen" id="path-screen">
+            <div class="background-overlay"></div>
+            <div class="content">
+                <h2 class="screen-title">Selección de Ruta del Juego</h2>
+                <div class="path-section">
+                    <div class="auto-detect">
+                        <div class="detect-info">
+                            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span id="detection-status">Detectando automáticamente Steam...</span>
+                        </div>
+                    </div>
+                    
+                    <div class="manual-select">
+                        <label for="game-path">Ruta del juego:</label>
+                        <div class="path-input-group">
+                            <input type="text" id="game-path" placeholder="Selecciona la carpeta de Kingdom Hearts HD 2.8..." readonly>
+                            <button class="secondary-button" id="browse-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M3 7V5C3 3.89543 3.89543 3 5 3H9.58579C9.851 3 10.1054 3.10536 10.2929 3.29289L12 5H19C20.1046 5 21 5.89543 21 7V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Examinar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button class="secondary-button" id="back-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Atrás
+                    </button>
+                    <button class="primary-button disabled" id="install-btn">
+                        <span>Instalar</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Installation Progress Screen -->
+        <div class="screen" id="progress-screen">
+            <div class="background-overlay"></div>
+            <div class="content">
+                <h2 class="screen-title">Instalando Doblaje</h2>
+                <div class="progress-section">
+                    <div class="progress-info">
+                        <p class="progress-message">Preparando tu aventura en castellano...</p>
+                        <div class="progress-details">
+                            <span class="progress-step">Paso 1 de 6</span>
+                            <span class="progress-percentage">0%</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="installation-art">
+                    <div class="pulse-animation"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completion Screen -->
+        <div class="screen" id="complete-screen">
+            <div class="background-overlay"></div>
+            <div class="content">
+                <div class="success-section">
+                    <div class="success-icon">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h2 class="success-title">¡Instalación Completa!</h2>
+                    <p class="success-message">El doblaje al castellano se ha instalado correctamente.<br>¡Disfruta de Kingdom Hearts 0.2 en español!</p>
+                </div>
+                
+                <div class="final-actions">
+                    <button class="primary-button large" id="play-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M8 5V19L19 12L8 5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Jugar Ahora</span>
+                    </button>
+                    <button class="secondary-button" id="finish-btn">Finalizar</button>
+                </div>
+
+                <div class="credits">
+                    <h3>Créditos</h3>
+                    <p><strong>Ecos del Doblaje</strong></p>
+                    <div class="social-links">
+                        <a href="https://linktr.ee/ecosdeldoblaje" class="social-link" target="_blank">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Redes Sociales
+                        </a>
+                        <a href="https://www.ecosdeldoblaje.es" class="social-link" target="_blank">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M2 12H22M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Página Web
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

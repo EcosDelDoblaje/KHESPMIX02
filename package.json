@@ -1,0 +1,48 @@
+{
+  "name": "ecos-del-doblaje-installer",
+  "version": "1.0.0",
+  "description": "Instalador del doblaje al castellano para Kingdom hearts 0.2",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish=never"
+  },
+  "author": "Ecos del Doblaje",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1"
+  },
+  "build": {
+    "appId": "com.ecosdeldoblaje.kh02.installer",
+    "productName": "Ecos del Doblaje - Kingdom hearts 0.2",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "portable": {
+      "artifactName": "KH02-EcosDelDoblaje.exe"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

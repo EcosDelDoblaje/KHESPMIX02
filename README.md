@@ -45,7 +45,7 @@ Si encuentras algún problema:
 - **Aqua:** [Alba Banda](https://www.instagram.com/_albabn_/)
 - **Mickey:** [Pedro duran](https://www.instagram.com/pedro_duran_jose)
 - **Terra:** [Skads7](https://www.instagram.com/doblajesskads7)
-- **Terranort:** [PAtrick Elric](https://x.com/PatrickElrick_)
+- **Terranort:** [Patrick Elric](https://x.com/PatrickElrick_)
 - **Sora:** [Víctor López](https://www.instagram.com/vicine20)
 - **Goofy:** [Sedka](https://www.instagram.com/sedka_/?hl=es)
 - **Donald:** [Yakko](https://www.instagram.com/yakkofandubs1/)

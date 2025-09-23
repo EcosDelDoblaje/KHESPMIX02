@@ -31,16 +31,31 @@ Si encuentras algún problema:
    - Pasos para reproducir el error
    - Información del sistema (OS, versión del juego, etc.)
    - Screenshots si es aplicable
+  
+## CREDITOS
+
+### 🎬​ Dirección | Programación | Edición
+
+- **Dirección:**  [Alba Banda](https://www.instagram.com/_albabn_/) y [Yokimitsuro](https://x.com/Yokimitsuro)
+- **Programación y Edición:** [Cusa](https://www.instagram.com/fernando_bajista)
+- **Ayudante de Edición:** [olmofaye](https://www.instagram.com/olmogg/) y [Eva María Rojas Lobato](https://www.youtube.com/@EvamaDubs)
+  
+### 🎙️ Actores de doblaje
+
+- **Aqua:** [Alba Banda](https://www.instagram.com/_albabn_/)
+- **Mickey:** [Pedro duran](https://www.instagram.com/pedro_duran_jose)
+- **Terra:** [Skads7](https://www.instagram.com/doblajesskads7)
+- **Terranort:** [Patrick Elric](https://x.com/PatrickElrick_)
+- **Sora:** [Víctor López](https://www.instagram.com/vicine20)
+- **Goofy:** [Sedka](https://www.instagram.com/sedka_/?hl=es)
+- **Donald:** [Yakko](https://www.instagram.com/yakkofandubs1/)
+- **Riku:** [Mikel Sanchez](https://www.instagram.com/grixmistery/)
+- **Kairi:** [Yuki Aisaka](https://linktr.ee/yukiaisaka)
+- **Yen sid:** [Igor Roman](#)
 
 ## 👥 Equipo
 
 **Ecos del Doblaje** - Equipo de doblaje español para videojuegos
-
-## 🙏 Agradecimientos
-
-- Al equipo de desarrollo de Kingdom Hearts
-- A la comunidad de modding de Kingdom Hearts
-- A todos los colaboradores y testers del proyecto
 
 ## 📞 Contacto
 

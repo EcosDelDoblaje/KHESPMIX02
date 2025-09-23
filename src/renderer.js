@@ -1,4 +1,5 @@
 const { ipcRenderer } = require('electron');
+const path = require('path');
 
 let currentScreen = 'welcome';
 let gamePath = '';
@@ -103,9 +104,36 @@ function setupEventListeners() {
 
     // Complete screen
     document.getElementById('play-btn').addEventListener('click', async () => {
-        const success = await ipcRenderer.invoke('launch-game');
-        if (success) {
-            ipcRenderer.invoke('close-window');
+        const playBtn = document.getElementById('play-btn');
+        const originalText = playBtn.querySelector('span').textContent;
+        
+        try {
+            // Show loading state
+            playBtn.disabled = true;
+            playBtn.querySelector('span').textContent = 'Iniciando...';
+            
+            const success = await ipcRenderer.invoke('launch-game');
+            
+            if (success) {
+                playBtn.querySelector('span').textContent = '¡Iniciado!';
+                setTimeout(() => {
+                    ipcRenderer.invoke('close-window');
+                }, 1000);
+            } else {
+                // Show error and reset
+                playBtn.querySelector('span').textContent = 'Error al iniciar';
+                setTimeout(() => {
+                    playBtn.disabled = false;
+                    playBtn.querySelector('span').textContent = originalText;
+                }, 2000);
+                
+                alert('No se pudo iniciar el juego automáticamente.\n\nPor favor, abre Steam manualmente y busca "Kingdom Hearts HD 2.8 Final Chapter Prologue" en tu biblioteca.');
+            }
+        } catch (error) {
+            console.error('Error launching game:', error);
+            playBtn.disabled = false;
+            playBtn.querySelector('span').textContent = originalText;
+            alert('Error inesperado al intentar iniciar el juego.');
         }
     });
 
@@ -225,6 +253,49 @@ async function validateGamePath(path) {
     }
 }
 
+async function testLocalRar() {
+    console.log('Starting local RAR test...');
+    showScreen('installation-screen');
+    
+    try {
+        const result = await ipcRenderer.invoke('test-local-rar');
+        if (result.success) {
+            alert(`¡Prueba exitosa!\n\nCarpeta DT encontrada en:\n${result.dtFolderPath}`);
+            showScreen('welcome-screen');
+        } else {
+            alert(`Error en la prueba local: ${result.error}`);
+            showScreen('welcome-screen');
+        }
+    } catch (error) {
+        console.error('Local RAR test error:', error);
+        alert('Error inesperado durante la prueba local.');
+        showScreen('welcome-screen');
+    }
+}
+
+async function installMod() {
+    if (!gamePath) {
+        alert('Por favor, selecciona primero la ruta del juego.');
+        return;
+    }
+    
+    showScreen('installation-screen');
+    
+    try {
+        const result = await ipcRenderer.invoke('install-dubbing', gamePath);
+        if (result.success) {
+            showScreen('complete-screen');
+        } else {
+            alert(`Error durante la instalación: ${result.error}`);
+            showScreen('path-screen');
+        }
+    } catch (error) {
+        console.error('Installation error:', error);
+        alert('Error inesperado durante la instalación.');
+        showScreen('path-screen');
+    }
+}
+
 async function startInstallation(options = {}) {
     showScreen('progress-screen');
     
@@ -295,6 +366,39 @@ async function startUninstallation() {
     }
 }
 
+// Fix image paths for Electron
+document.addEventListener('DOMContentLoaded', () => {
+    const aquaImg = document.querySelector('.aqua-animation');
+    if (aquaImg) {
+        // Try different paths for the GIF
+        const possiblePaths = [
+            '../assets/aqua.gif',
+            './assets/aqua.gif',
+            'assets/aqua.gif',
+            path.join(__dirname, '..', 'assets', 'aqua.gif'),
+            path.join(process.cwd(), 'assets', 'aqua.gif')
+        ];
+        
+        let pathIndex = 0;
+        
+        const tryNextPath = () => {
+            if (pathIndex < possiblePaths.length) {
+                aquaImg.src = possiblePaths[pathIndex];
+                pathIndex++;
+            } else {
+                // If all paths fail, show fallback animation
+                aquaImg.style.display = 'none';
+                aquaImg.nextElementSibling.style.display = 'block';
+            }
+        };
+        
+        aquaImg.onerror = tryNextPath;
+        
+        // Start with first path
+        tryNextPath();
+    }
+});
+
 // Listen for installation progress updates
 ipcRenderer.on('installation-progress', (event, progress) => {
     const progressMessage = document.querySelector('.progress-message');
@@ -302,8 +406,58 @@ ipcRenderer.on('installation-progress', (event, progress) => {
     const progressPercentage = document.querySelector('.progress-percentage');
     const progressFill = document.querySelector('.progress-fill');
     
-    if (progressMessage) progressMessage.textContent = progress.message;
+    // Handle multi-line messages (for download progress)
+    if (progressMessage) {
+        if (progress.message.includes('\n')) {
+            // For multi-line messages, use innerHTML to preserve line breaks
+            progressMessage.innerHTML = progress.message.replace(/\n/g, '<br>');
+        } else {
+            progressMessage.textContent = progress.message;
+        }
+    }
+    
     if (progressStep) progressStep.textContent = `Paso ${progress.step} de ${progress.total}`;
     if (progressPercentage) progressPercentage.textContent = `${progress.percentage}%`;
     if (progressFill) progressFill.style.width = `${progress.percentage}%`;
+    
+    // Add additional download info if available
+    if (progress.speed || progress.eta || progress.downloadedSize) {
+        let additionalInfo = '';
+        if (progress.downloadedSize && progress.totalSize) {
+            additionalInfo += `${progress.downloadedSize} / ${progress.totalSize}`;
+        }
+        if (progress.speed) {
+            additionalInfo += additionalInfo ? ` • ${progress.speed}` : progress.speed;
+        }
+        if (progress.eta) {
+            additionalInfo += additionalInfo ? ` • ETA: ${progress.eta}` : `ETA: ${progress.eta}`;
+        }
+        
+        // Create or update additional info element
+        let additionalInfoElement = document.querySelector('.progress-additional-info');
+        if (!additionalInfoElement && additionalInfo) {
+            additionalInfoElement = document.createElement('div');
+            additionalInfoElement.className = 'progress-additional-info';
+            additionalInfoElement.style.cssText = `
+                font-size: 0.85rem;
+                color: rgba(255, 255, 255, 0.8);
+                margin-top: 8px;
+                text-align: center;
+            `;
+            
+            const progressContainer = document.querySelector('.progress-info');
+            if (progressContainer) {
+                progressContainer.appendChild(additionalInfoElement);
+            }
+        }
+        
+        if (additionalInfoElement) {
+            if (additionalInfo) {
+                additionalInfoElement.textContent = additionalInfo;
+                additionalInfoElement.style.display = 'block';
+            } else {
+                additionalInfoElement.style.display = 'none';
+            }
+        }
+    }
 });

@@ -508,6 +508,23 @@ body {
     font-size: 0.9rem;
 }
 
+.progress-additional-info {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 8px;
+    text-align: center;
+    padding: 4px 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.progress-message {
+    line-height: 1.4;
+    min-height: 1.4em;
+}
+
 .progress-bar-container {
     width: 100%;
     height: 8px;
@@ -537,6 +554,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.aqua-animation {
+    width: 200px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(30, 64, 175, 0.4);
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.aqua-animation:hover {
+    transform: scale(1.05);
 }
 
 .pulse-animation {

@@ -3,6 +3,12 @@
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
 
+### 🌐 URLs:
+
+[**Redes sociales**](https://linktr.ee/ecosdeldoblaje)
+
+[**Web**](https://www.ecosdeldoblaje.es/)
+
 ## 📖 Descripción
 
 Instalador oficial del doblaje al castellano para **Kingdom Hearts 0.2: Birth by Sleep - A Fragmentary Passage**. Este proyecto permite a los usuarios instalar fácilmente el mod de doblaje español desarrollado por el equipo de Ecos del Doblaje.

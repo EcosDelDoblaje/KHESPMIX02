@@ -15,10 +15,9 @@ Instalador oficial del doblaje al castellano para **Kingdom Hearts 0.2: Birth by
 ## 🚀 Instalación y Uso
 
 1. Descarga el archivo `KH02-EcosDelDoblaje.exe` desde la sección de releases
-2. Ejecuta el instalador como administrador
-3. Sigue las instrucciones en pantalla
-4. Selecciona el directorio donde está instalado Kingdom Hearts 0.2
-5. Haz clic en "Instalar" y espera a que termine el proceso
+2. Sigue las instrucciones en pantalla
+3. Selecciona el directorio donde está instalado Kingdom Hearts 0.2
+4. Haz clic en "Instalar" y espera a que termine el proceso
 
 ## 🐛 Reporte de Errores
 

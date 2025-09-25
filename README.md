@@ -38,7 +38,7 @@ Si encuentras algún problema:
 
 - **Dirección:**  [Alba Banda](https://www.instagram.com/_albabn_/) y [Yokimitsuro](https://x.com/Yokimitsuro)
 - **Programación y Edición:** [Cusa](https://www.instagram.com/fernando_bajista)
-- **Ayudante de Edición:** [olmofaye](https://www.instagram.com/olmogg/) y [Eva María Rojas Lobato](https://www.youtube.com/@EvamaDubs)
+- **Ayudante de Edición:** [Santiago Rivas (Diane)](https://www.instagram.com/santiagorivaslocutor/) y [Eva María Rojas Lobato](https://www.youtube.com/@EvamaDubs)
   
 ### 🎙️ Actores de doblaje
 

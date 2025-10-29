@@ -42,7 +42,8 @@ Si encuentras algún problema:
 ### 🎬​ Dirección | Programación | Edición
 
 - **Dirección:**  [Alba Banda](https://www.instagram.com/_albabn_/) y [Yokimitsuro](https://x.com/Yokimitsuro)
-- **Programación y Edición:** [Cusa](https://www.instagram.com/fernando_bajista)
+- **Programación:** [Yokimitsuro](https://x.com/Yokimitsuro)
+- **Edición:** [Cusa](https://www.instagram.com/fernando_bajista)
 - **Ayudante de Edición:** [Santiago Rivas (Diane)](https://www.instagram.com/santiagorivaslocutor/) y [Eva María Rojas Lobato](https://www.youtube.com/@EvamaDubs)
 - **Producción, mezcla y mastering de música:** [OCOA Studio](https://www.instagram.com/ocoa.studio)
   

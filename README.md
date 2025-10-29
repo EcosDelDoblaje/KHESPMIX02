@@ -59,6 +59,11 @@ Si encuentras algún problema:
 - **Kairi:** [Yuki Aisaka](https://linktr.ee/yukiaisaka)
 - **Yen sid:** [Igor Roman](#)
 
+### 🎙️ Canciones
+
+- **Opening:** [BiBi Rodríguez](https://www.instagram.com/bibi.rodriguez._/)
+- **Ending:** [Marta Delgado](https://www.youtube.com/@martadubs)
+
 ## 👥 Equipo
 
 **Ecos del Doblaje** - Equipo de doblaje español para videojuegos

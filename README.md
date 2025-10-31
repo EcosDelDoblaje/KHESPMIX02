@@ -45,7 +45,6 @@ Si encuentras algún problema:
 - **Programación:** [Yokimitsuro](https://x.com/Yokimitsuro)
 - **Edición:** [Cusa](https://www.instagram.com/fernando_bajista)
 - **Ayudante de Edición:** [Santiago Rivas (Diane)](https://www.instagram.com/santiagorivaslocutor/) y [Eva María Rojas Lobato](https://www.youtube.com/@EvamaDubs)
-- **Producción, mezcla y mastering de música:** [OCOA Studio](https://www.instagram.com/ocoa.studio)
   
 ### 🎙️ Actores de doblaje
 
@@ -64,6 +63,8 @@ Si encuentras algún problema:
 
 - **Opening:** [BiBi Rodríguez](https://www.instagram.com/bibi.rodriguez._/)
 - **Ending:** [Marta Delgado](https://www.youtube.com/@martadubs)
+- **Letra:** [Charm](https://www.instagram.com/charmofficialmusic/)
+- **Mezcla y Mastering:** [OCOA Studio](https://www.instagram.com/ocoa.studio)
 
 ## 👥 Equipo
 
